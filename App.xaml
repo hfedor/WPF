@@ -1,0 +1,23 @@
+﻿<Application x:Class="WPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WPF"
+             xmlns:t="clr-namespace:WPF.ViewModels"
+             xmlns:k="clr-namespace:WPF.Views">
+    <Application.Resources>
+        <!-- Słownik  -->
+        <ResourceDictionary>
+            <!-- wiązanie ViewModel'i z widokami -->
+            <!-- obiekt typu SongsViewModel -->
+            <DataTemplate DataType="{x:Type t:SongsViewModel}">
+                <k:SongsView/>
+                <!-- kontrolka -->
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type t:SongViewModel}">
+                <k:SongView/>
+            </DataTemplate>
+            <!-- Dummy Style, anything you won't use goes -->
+            <Style TargetType="{x:Type Rectangle}" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
